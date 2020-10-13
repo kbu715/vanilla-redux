@@ -48,3 +48,12 @@ const onChange = () => {
 }
 
 store.subscribe(onChange);
+
+
+
+
+
+
+state를 mutate(변형) 해서는 안돼 (array.push(action.text)와 같은 것은 변형이다.)
+
+return [...state, {text: action.text}] : 새 state를 return 시켜줘야 한다.!!!!! 중요!!!
