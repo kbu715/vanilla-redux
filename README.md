@@ -19,3 +19,32 @@ const reducer = (state, action) => {
         ...
     }
 }
+
+
+=>
+
+
+
+if대신 switch 쓰자
+
+switch(action.type) {
+    case "ADD" :
+        return count + 1;
+    case "MINUS" :
+        return count - 1;
+    default :
+        return count;
+}
+
+
+
+action은 무조건 type이 있어야한다!!
+
+
+subscribe는 우리에게 store안에 있는 변화들을 알 수 있게 해줘
+
+const onChange = () => {
+    console.log("there was a change!!!")
+}
+
+store.subscribe(onChange);
