@@ -1,5 +1,5 @@
-import {createStore} from 'redux';
-import {createAction, createReducer} from '@reduxjs/toolkit';
+// import {createStore} from 'redux';
+import {configureStore, createAction, createReducer} from '@reduxjs/toolkit';
 
 
 // 1. 기본 방법
@@ -54,7 +54,7 @@ const reducer = createReducer(initialToDoList, { // createReducer : 2가지 옵�
     [deleteToDo] : (state, action) => state.filter(toDo => toDo.id !== action.payload)
 })
 
-const store = createStore(reducer);
+const store = configureStore({reducer}); // configureStore을 사용하고 있기때문에 chrome에서 Redux Developer Tools를 사용가능함
 
 export const actionCreators = {
     addToDo,
