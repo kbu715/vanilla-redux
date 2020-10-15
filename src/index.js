@@ -1,8 +1,14 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import App from './components/App';
+import React from "react";
+import ReactDom from "react-dom";
+import { Provider } from "react-redux";
+import App from "./components/App";
+import store from "./store";
 
-ReactDom.render( <App />, document.getElementById('root') )
+ReactDom.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById("root"));
 
 // -------------Pure Redux : COUNTER------------------------
 
@@ -10,7 +16,6 @@ ReactDom.render( <App />, document.getElementById('root') )
 // const add = document.getElementById("add")
 // const minus = document.getElementById("minus")
 // const number = document.querySelector("span")
-
 
 // number.innerText = 0;
 
@@ -27,7 +32,7 @@ ReactDom.render( <App />, document.getElementById('root') )
 //     default:
 //       return count;
 //   }
-  
+
 // }
 
 // const countStore = createStore(countModifier)
@@ -46,12 +51,7 @@ ReactDom.render( <App />, document.getElementById('root') )
 //   countStore.dispatch({ type: MINUS})
 // })
 
-
-
-
 //---------------------Pure Redux : TO DO LIST----------------
-
-
 
 // import { createStore } from "redux"
 
@@ -62,10 +62,7 @@ ReactDom.render( <App />, document.getElementById('root') )
 // const ADD_TODO = "ADD_TODO";
 // const DELETE_TODO = "DELETE_TODO";
 
-
-
 // //-------------------actionCreators----------------------------
-
 
 // const addToDo = text => { //return 값이 reducer의 action에 보내진다!!!!!
 //   return {
@@ -99,9 +96,7 @@ ReactDom.render( <App />, document.getElementById('root') )
 
 // const store = createStore(reducer);
 
-
 // store.subscribe(() => console.log(store.getState()))
-
 
 // //오로지 action을 dispatch하기 위한 용도
 // const dispatchAddToDo = text => {
@@ -125,13 +120,11 @@ ReactDom.render( <App />, document.getElementById('root') )
 //     li.innerText = toDo.text;
 //     li.appendChild(btn);
 //     ul.appendChild(li);
-    
+
 //   });
 // }
 
 // store.subscribe(paintToDos) //state 변할때마다 repaint
-
-
 
 // const onSubmit = e => {
 //   e.preventDefault();
@@ -140,10 +133,4 @@ ReactDom.render( <App />, document.getElementById('root') )
 //   dispatchAddToDo(toDo);
 // }
 
-
 // form.addEventListener("submit", onSubmit);
-
-
-
-
-
