@@ -32,7 +32,7 @@ function mapDispatchToProps(dispatch, ownProps){
     const { match:{ params: { id } } } = ownProps;
     return {
         onBtnClick : () => {
-            dispatch(actionCreators.deleteToDo(id))
+            dispatch(actionCreators.deleteToDo(parseInt(id)))
             window.history.back();
         }
     }
